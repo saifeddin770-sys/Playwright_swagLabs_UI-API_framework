@@ -4,6 +4,7 @@ import { LoginPage } from '../../src/pages/LoginPage';
 
 import loginData from '../../src/test-data/loginData.json';
 
+
 test('TC_UI_001 Valid Login', async ({ page }) => {
 
   const login = new LoginPage(page);
@@ -18,16 +19,22 @@ test('TC_UI_001 Valid Login', async ({ page }) => {
   await login.verifyLoginSuccess();
 });
 
-for (const data of loginData.invalidUsers) {
 
-  test(`Invalid Login - ${data.error}`, async ({ page }) => {
+for (const invalidUser of loginData.invalidUsers) {
+
+  test(`TC_UI_002 Invalid Login - ${invalidUser.error}`, async ({ page }) => {
 
     const login = new LoginPage(page);
 
     await login.navigate();
 
-    await login.login(data.username, data.password);
+    await login.login(
+      invalidUser.username,
+      invalidUser.password
+    );
 
-    await login.verifyError(data.error);
+    await login.verifyError(
+      invalidUser.error
+    );
   });
 }

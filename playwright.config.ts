@@ -2,37 +2,30 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
 
-testDir: './tests',
+  testDir: './tests',
 
-reporter: [
-['html', { outputFolder: 'reports' }]
-],
+  timeout: 30000,
 
-use: {
-headless: false,
-viewport: null,
+  reporter: [
+    ['html', { outputFolder: 'reports', open: 'always' }]
+  ],
 
-launchOptions: {
-args: ['--start-maximized']
-}
-},
+  use: {
+    headless: false,
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure'
+  },
 
-projects: [
+  projects: [
 
-{
-name: 'Chrome',
-use: {
-...devices['Desktop Chrome']
-}
-},
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] }
+    },
 
-{
-name: 'Firefox',
-use: {
-...devices['Desktop Firefox']
-}
-}
-],
-
-globalSetup: require.resolve('./src/utils/logger.ts')
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] }
+    }
+  ]
 });

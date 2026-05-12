@@ -34,9 +34,7 @@ Using CMD OR Powershell:
 1. Clone Repository
 
 
-git clone https://github.com/saifeddin770-sys/Playwright_swagLabs_UI-API_framework.git
-
-
+git clone https://github.com/saifeddin770-sys/Playwright_swagLabsUI-SimpleBooksAPI_framework.git
 
 2. Navigate to Project
 

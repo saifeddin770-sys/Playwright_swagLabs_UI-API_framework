@@ -1,6 +1,6 @@
-Playwright UI & API Automation Framework
+#Playwright UI & API Automation Framework
 
-Project Description
+Project Description:
 
 This project is a Playwright automation framework built with TypeScript and Page Object Model (POM).  
 The framework handles both UI and API test scenarios for SauceDemo and Simple Books API.
@@ -17,7 +17,7 @@ Technologies Used should be downloaded :
 
 
 
-Prerequisites
+Prerequisites:
 
 Before running the framework, ensure the following are installed:
 
@@ -27,7 +27,8 @@ Before running the framework, ensure the following are installed:
 
 ---
 
-Setup & Installation
+*Setup & Installation:
+
 Using CMD OR Powershell:
  
 1. Clone Repository
